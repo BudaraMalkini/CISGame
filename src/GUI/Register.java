@@ -7,6 +7,7 @@ package GUI;
 
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
+import java.util.regex.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,6 +55,9 @@ public class Register extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        uname = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        pass = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +99,9 @@ public class Register extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JpasswordKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                JpasswordKeyReleased(evt);
+            }
         });
         jPanel1.add(Jpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 360, 40));
 
@@ -129,6 +136,9 @@ public class Register extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtemailKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtemailKeyReleased(evt);
+            }
         });
         jPanel1.add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 320, 360, 40));
 
@@ -139,9 +149,17 @@ public class Register extends javax.swing.JFrame {
                 txtusernameFocusGained(evt);
             }
         });
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
         txtusername.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtusernameKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtusernameKeyReleased(evt);
             }
         });
         jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 360, 40));
@@ -190,6 +208,15 @@ public class Register extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel12.setText("Confirm Password:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 520, -1, -1));
+
+        uname.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel1.add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 210, 160, 30));
+
+        email.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 330, 150, 30));
+
+        pass.setForeground(new java.awt.Color(204, 0, 51));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 436, 150, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,6 +317,56 @@ public class Register extends javax.swing.JFrame {
         jcpassword.setText("");
     }//GEN-LAST:event_jcpasswordFocusGained
 
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusernameActionPerformed
+
+    private void txtusernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtusernameKeyReleased
+        /*
+        validation user name cant use numbers to user name 
+        */
+        
+        String PATTERN="^[a-zA-Z]{0,30}$";
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match=patt.matcher(txtusername.getText());
+        if (!match.matches()){
+            uname.setText("insert valid user name ");
+        }
+        else{
+            uname.setText(null);
+        }
+    }//GEN-LAST:event_txtusernameKeyReleased
+
+    private void txtemailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyReleased
+        /*
+        Validate the email example@gmail.com
+        */
+        String PATTERN="^[a-zA-Z0-9]{0,30}[@][a-zA-Z]{0,10}[.][a-zA-Z]{0,5}$";
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match=patt.matcher(txtemail.getText());
+        if (!match.matches()){
+            email.setText("inser valid email");
+        }
+        else{
+            email.setText(null);
+        }
+    }//GEN-LAST:event_txtemailKeyReleased
+
+    private void JpasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JpasswordKeyReleased
+         /*
+        Minimum eight characters, at least one letter and one number:
+        */
+        String PATTERN="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}";
+        Pattern patt=Pattern.compile(PATTERN);
+        Matcher match=patt.matcher(Jpassword.getText());
+        if (!match.matches()){
+            pass.setText("insert valid password");
+        }
+        else{
+            pass.setText(null);
+        }
+    }//GEN-LAST:event_JpasswordKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -327,6 +404,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Jpassword;
+    private javax.swing.JLabel email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -343,7 +421,9 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jcpassword;
+    private javax.swing.JLabel pass;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtusername;
+    private javax.swing.JLabel uname;
     // End of variables declaration//GEN-END:variables
 }
