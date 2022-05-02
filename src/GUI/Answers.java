@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package GUI;
-
+import Server.sendEmail;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import Services.Answer;
@@ -76,6 +76,11 @@ public class Answers extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 51, 255));
         jButton1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jButton1.setText("SEND MAIL");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/send-mail.jpg"))); // NOI18N
@@ -128,6 +133,19 @@ public class Answers extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            /***
+             * send the response output into the email server.
+             */
+            
+            sendEmail.sendMail(Login.userName, result.getText(), "Quiz Dashboard");
+            JOptionPane.showMessageDialog(this, "Email send Succesfully.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -49,7 +49,7 @@ public class Game10 extends javax.swing.JFrame {
                     
                     /***
                      * send values to other side before the overdue 
-                     * Read saved answers temporary saved in localdisk
+                     * Read saved answers temporary saved in local disk
                      */
                     Answer [] ansArray = new Answer[10];
                     FileInputStream fileInput = null;
@@ -90,7 +90,7 @@ public class Game10 extends javax.swing.JFrame {
                     
                     
                     /***
-                     * Udin user cookie eka read krla e gnna value eka server ekta yawala
+                     * user cookie is read and the value is taken to the server
                      * send read values server side
                      */
                     new RMIconnection().getServer().saveAnswers(ansArray, u1.getEmail());

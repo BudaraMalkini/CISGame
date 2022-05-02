@@ -169,7 +169,7 @@ public class Game1 extends javax.swing.JFrame {
          */
 
         if (!(answer.isEmpty() || answer.equals(null))) {
-            if (answer.equals("21")) {//question ake answer eka 
+            if (answer.equals("21")) {//answer to the question
                 ans1 = new Answer(1, "True");
             } else {
                 ans1 = new Answer(1, "False");
@@ -186,7 +186,7 @@ public class Game1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       TI.start();// Gui Window eka on unama Timer will start
+       TI.start();// timer will start after the gui window is started
     }//GEN-LAST:event_formWindowOpened
     int i = 21;// Give Time to Timer
     Timer TI; //Create a variavle name for timer

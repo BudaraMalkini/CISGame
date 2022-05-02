@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *save answer temporary txt file in local disk
+ *save answer temporary text file in local disk
  */
 public class TempanswerService {
     
@@ -26,7 +26,7 @@ public class TempanswerService {
     }
     
     /**
-     *avoid overide answers when save to the temporary file 
+     *avoid override answers when save to the temporary file 
      * @param ans
      */
     public void maintainAnswer (Answer ans) {
@@ -34,7 +34,7 @@ public class TempanswerService {
         index = index + 1;
     }
     /***
-     * question answer save to local disk to temperary
+     * question answer save to local disk to temporary
      * @param quesNo
      * @param ans 
      */
