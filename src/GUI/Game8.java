@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author budar
  */
 public class Game8 extends javax.swing.JFrame {
 

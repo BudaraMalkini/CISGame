@@ -14,6 +14,10 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author budar
+ */
 public class RMIconnection {
     private Registry reg;
     private RMI_Facade server;

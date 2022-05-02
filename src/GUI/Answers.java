@@ -20,14 +20,17 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
- * @author User
+ * @author budar
  */
 public class Answers extends javax.swing.JFrame {
 
     static String userName;
+
+    /**
+     *
+     */
     public Answers() {
         initComponents();
         getDetailsUser();

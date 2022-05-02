@@ -9,8 +9,16 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+/**
+ *
+ * @author budar
+ */
 public class Server {
     
+    /**
+     * starting the server 
+     * @param args
+     */
     public static void main(String[] args) {
          System.out.println("Server is starting.....");
         try {

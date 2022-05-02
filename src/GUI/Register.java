@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author budar
  */
 public class Register extends javax.swing.JFrame {
 

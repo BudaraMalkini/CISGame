@@ -10,7 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *Create cookie for user and save username temperory in local disk
+ * This class created for create a user cookie when the user login
+ * @author budar
  */
 public class User implements Serializable {
 

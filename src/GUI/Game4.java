@@ -11,10 +11,9 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 import javax.swing.JOptionPane;
 
-
 /**
  *
- * @author User
+ * @author budar
  */
 public class Game4 extends javax.swing.JFrame {
 

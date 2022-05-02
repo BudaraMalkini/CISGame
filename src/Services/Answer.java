@@ -11,10 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Me Model class eka hadala thiyenne RMI eka eha meha objects geniyanna 
- * create object array to save to answer reading temporary files 
- *to identify the object 
- * @author User
+ * This class created for convert answers for the object array
+ * @author budar
  */
 public class Answer implements Serializable{
     private int qno;

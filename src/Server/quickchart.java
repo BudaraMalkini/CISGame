@@ -20,6 +20,11 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+/**
+ *
+ * @author budar
+ */
 public class quickchart {
     
      private Integer width = 500;
@@ -33,15 +38,20 @@ public class quickchart {
 	private String host;
 	private Integer port;
         
-        
-        
-        public quickchart() {
+    /**
+     *Connect quick chart using https request
+     */
+    public quickchart() {
 		this("https", "quickchart.io", 443);
 	}
         
-        
-        
-        public quickchart(String scheme, String host, Integer port) {
+    /**
+     * Check quick chart port
+     * @param scheme
+     * @param host
+     * @param port
+     */
+    public quickchart(String scheme, String host, Integer port) {
 		this.scheme = scheme;
 		this.host = host;
 		this.port = port;
@@ -248,8 +258,11 @@ public class quickchart {
 		}
 	}
         
-        
-        public String toDataUrl() {
+    /**
+     *
+     * @return
+     */
+    public String toDataUrl() {
 		try {
 			HttpEntity entity = executePost("/chart");
 			return "data:image/png;base64," + Base64.getEncoder().encode(EntityUtils.toByteArray(entity));
@@ -258,8 +271,12 @@ public class quickchart {
 		}
 	}
         
-        
-        public void toFile(String filePath) throws IOException {
+    /**
+     *
+     * @param filePath
+     * @throws IOException
+     */
+    public void toFile(String filePath) throws IOException {
 		HttpEntity entity = executePost("/chart");
 		BufferedHttpEntity entityBuffer = new BufferedHttpEntity(entity);
 

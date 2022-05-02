@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author budar
  */
 public class Admin extends javax.swing.JFrame {
     static String userName;

@@ -13,7 +13,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author User
+ * @author budar
  */
 public class Game1 extends javax.swing.JFrame {
 

@@ -10,7 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *save answer temporary text file in local disk
+ * Save answer to the temporary value
+ * @author budar
  */
 public class TempanswerService {
     

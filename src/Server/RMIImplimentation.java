@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
-
-
+/**
+ *
+ * @author budar
+ */
 public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade {
     private static final long serialVersionUID = -3763231206310448L;
     private String response;
@@ -26,6 +26,15 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         super();
     }
 
+    /**
+     *insert new user to database
+     * @param username
+     * @param email
+     * @param password
+     * @param confirm_password
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String Register(String username, String email, String password, String confirm_password) throws RemoteException {
         String response_signup = "";
@@ -61,6 +70,13 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         return response_signup;
     }
 
+    /**
+     *check user's user name and password
+     * @param userName
+     * @param password
+     * @return
+     * @throws RemoteException
+     */
     @Override
      public String login(String userName, String password) throws RemoteException {
         String response = "";
@@ -87,6 +103,13 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         }
     }
 
+    /**
+     * Check admin user name and password
+     * @param userName
+     * @param password
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String Admin(String userName, String password) throws RemoteException {
         String response = "";
@@ -114,6 +137,13 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
     
 }
 
+    /**
+     * Insert new admin to the databse
+     * @param username
+     * @param password
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String NewAdmin(String username, String password) throws RemoteException {
         String response = "";
@@ -134,6 +164,12 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         return response;
     }
 
+    /**
+     * Save user's answer to the databse 
+     * @param ansArray
+     * @param email
+     * @throws RemoteException
+     */
     @Override
     public void saveAnswers(Answer[] ansArray, String email) throws RemoteException {
          System.out.println("Email: " + email);
@@ -188,6 +224,12 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         return finalMarks;
     }
 
+    /**
+     * Get users totals marks from the database
+     * @param username
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String getUmarks(String username) throws RemoteException {
        if (username == null || username == "") {
@@ -210,6 +252,12 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         return null;
     }
 
+    /**
+     * Check correct answers from database
+     * @param email
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public ArrayList<QandAns> getDetailsUser(String email) throws RemoteException {
         if (email == null || email == "") {
@@ -233,6 +281,11 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
         return null;
     }
 
+    /**
+     * Get user total marks for the quickchart API
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String getUtotalMarks() throws RemoteException {
         quickchart chart = new quickchart();
@@ -251,8 +304,8 @@ public class RMIImplimentation extends UnicastRemoteObject implements RMI_Facade
       if (rs.next()){
           
           /***
-           * Quickchart.io. 2021. Documentation. [online] Available at:
-           * <https://quickchart.io/documentation/#library-java>.
+           * Documentation (2022). Available at: https://quickchart.io/documentation/ (Accessed: 2 May 2022).
+           * <https://quickchart.io/documentation/>.
            */
 		chart.setWidth(600);
 		chart.setHeight(600);

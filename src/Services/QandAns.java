@@ -5,9 +5,10 @@
  */
 package Services;
 import java.io.Serializable;
+
 /**
  *
- * @author User
+ * @author budar
  */
 public class QandAns implements Serializable {
     private String qno;
@@ -15,7 +16,7 @@ public class QandAns implements Serializable {
     private String answer;
 
     /**
-     *read questions and answers from databse 
+     * This class use for question and answers for databse 
      * @param qno
      * @param question
      * @param answer

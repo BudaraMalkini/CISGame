@@ -9,6 +9,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
+/**
+ *
+ * @author budar
+ */
 public class DB_Connection {
     static Connection game;
     
